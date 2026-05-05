@@ -1,0 +1,38 @@
+{
+  "nav_about": "เกี่ยวกับ",
+  "nav_experience": "ประสบการณ์",
+  "nav_skills": "ทักษะ",
+  "nav_education": "การศึกษา",
+  "nav_projects": "โปรเจกต์",
+  "nav_contact": "ติดต่อ",
+
+  "hero_greeting": "สวัสดี ผมชื่อ",
+  "hero_title": "วิศวกรซอฟต์แวร์อาวุโส",
+  "hero_subtitle": "สร้างระบบที่รองรับการขยายตัวและประสบการณ์นักพัฒนาที่ยอดเยี่ยม — กว่า 7 ปีในการแปลงปัญหาซับซ้อนให้เป็นโซลูชันที่หรูหรา",
+  "hero_cta_contact": "ติดต่อฉัน",
+  "hero_cta_download": "ดาวน์โหลด CV",
+  "hero_open_to_work": "พร้อมรับงาน",
+
+  "exp_section_title": "ประสบการณ์การทำงาน",
+
+  "skills_section_title": "ทักษะ",
+
+  "edu_section_title": "การศึกษา",
+
+  "proj_section_title": "โปรเจกต์",
+  "proj_achievements_title": "ความสำเร็จ",
+  "proj_view_source": "ดูซอร์สโค้ด",
+
+  "contact_section_title": "ติดต่อฉัน",
+  "contact_email_label": "อีเมล",
+  "contact_phone_label": "โทรศัพท์",
+  "contact_location_label": "ที่อยู่",
+  "contact_github_label": "GitHub",
+  "contact_linkedin_label": "LinkedIn",
+
+  "footer_built_with": "สร้างด้วย NestJS · TypeScript · Tailwind CSS",
+  "footer_rights": "สงวนลิขสิทธิ์",
+
+  "dark_toggle_label": "สลับโหมดมืด/สว่าง",
+  "lang_switch_to": "English"
+}

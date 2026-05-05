@@ -1,0 +1,38 @@
+{
+  "nav_about": "About",
+  "nav_experience": "Experience",
+  "nav_skills": "Skills",
+  "nav_education": "Education",
+  "nav_projects": "Projects",
+  "nav_contact": "Contact",
+
+  "hero_greeting": "Hi, I'm",
+  "hero_title": "Senior Software Engineer",
+  "hero_subtitle": "Building scalable systems and exceptional developer experiences — 7+ years turning complex problems into elegant solutions.",
+  "hero_cta_contact": "Get in Touch",
+  "hero_cta_download": "Download CV",
+  "hero_open_to_work": "Open to Work",
+
+  "exp_section_title": "Work Experience",
+
+  "skills_section_title": "Skills",
+
+  "edu_section_title": "Education",
+
+  "proj_section_title": "Projects",
+  "proj_achievements_title": "Achievements",
+  "proj_view_source": "View Source",
+
+  "contact_section_title": "Get in Touch",
+  "contact_email_label": "Email",
+  "contact_phone_label": "Phone",
+  "contact_location_label": "Location",
+  "contact_github_label": "GitHub",
+  "contact_linkedin_label": "LinkedIn",
+
+  "footer_built_with": "Built with NestJS · TypeScript · Tailwind CSS",
+  "footer_rights": "All rights reserved.",
+
+  "dark_toggle_label": "Toggle dark mode",
+  "lang_switch_to": "ภาษาไทย"
+}

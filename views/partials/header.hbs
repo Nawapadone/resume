@@ -1,0 +1,42 @@
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+
+    <a href="/" class="text-lg font-bold text-slate-900 dark:text-white hover:text-accent-600 dark:hover:text-accent-400 transition-colors">
+      {{resume.name}}
+    </a>
+
+    <nav class="hidden md:flex items-center gap-6" aria-label="Main navigation">
+      <a href="#about" class="nav-link">{{t.nav_about}}</a>
+      <a href="#experience" class="nav-link">{{t.nav_experience}}</a>
+      <a href="#skills" class="nav-link">{{t.nav_skills}}</a>
+      <a href="#education" class="nav-link">{{t.nav_education}}</a>
+      <a href="#projects" class="nav-link">{{t.nav_projects}}</a>
+      <a href="#contact" class="nav-link">{{t.nav_contact}}</a>
+    </nav>
+
+    <div class="flex items-center gap-1">
+      {{!-- Language toggle --}}
+      <a href="/?lang={{alternateLang}}"
+         class="icon-btn text-xs font-semibold tracking-wide px-3"
+         aria-label="Switch language">
+        {{t.lang_switch_to}}
+      </a>
+
+      {{!-- Dark / light mode toggle --}}
+      <button id="theme-toggle" type="button" class="icon-btn" aria-label="{{t.dark_toggle_label}}">
+        {{!-- Sun — visible in dark mode --}}
+        <svg class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        </svg>
+        {{!-- Moon — visible in light mode --}}
+        <svg class="w-5 h-5 block dark:hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</header>
