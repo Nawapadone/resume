@@ -4,9 +4,11 @@ import { AcceptLanguageResolver, CookieResolver, I18nModule, QueryResolver } fro
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LangMiddleware } from './middleware/lang.middleware';
+import { PdfModule } from './pdf/pdf.module';
 
 @Module({
   imports: [
+    PdfModule,
     I18nModule.forRoot({
       fallbackLanguage: 'en',
       loaderOptions: {
