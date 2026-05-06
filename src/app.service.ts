@@ -59,13 +59,27 @@ export class AppService {
       github: 'github.com/nawapadone',
       linkedin: 'linkedin.com/in/nawapadone',
       summary:
-        'Software Engineer with experience across the full stack — from interactive frontends to backend services and mobile applications. Worked across fintech, e-commerce, and financial markets, with a current focus on web applications at London Stock Exchange Group.',
+        'Software Engineer with experience across the full stack — from interactive frontends to backend services and mobile applications. Worked across fintech, e-commerce, and financial markets, with a current focus on web applications at Merkle Capital (Cryptomind Group)',
       experience: [
+        {
+          title: 'Software Engineer',
+          company: 'Merkle Capital (Cryptomind Group)',
+          location: 'Bangkok, Thailand',
+          period: 'April 2024 – Present',
+          bullets: [
+            "Built and maintained the company website (merkle.capital) showcasing investment strategies, fund performance, and onboarding flows for Thailand's first SEC-licensed digital asset fund manager.",
+            'Developed client-facing features for portfolio tracking, deposit/withdrawal flows, and KYC integration, enabling retail investors to invest in digital assets',
+            'Integrated real-time market data and portfolio valuation APIs to display NAV, asset allocation, and performance metrics across multiple investment strategies.',
+            'Implemented secure authentication and compliance-driven workflows aligned with Thai SEC regulations for digital asset fund management.',
+            'Collaborated with investment, risk, and operations teams to translate fund strategies (Merkle Framework, rebalancing logic) into user-facing dashboards.',
+          ],
+          tech: ['React', 'Next.js', 'TypeScript', 'Node.js', 'REST APIs'],
+        },
         {
           title: 'Software Engineer',
           company: 'London Stock Exchange Group (LSEG)',
           location: 'Bangkok, Thailand',
-          period: 'Jun 2022 – Present',
+          period: 'Jun 2022 – Jan 2024',
           bullets: [
             'Designed and developed financial markets and data web applications using Polymer and Angular.',
             'Migrated and improved the backend from C# to JavaScript, retrieving data from databases.',

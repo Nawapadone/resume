@@ -1,11 +1,6 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { join } from 'path';
-import {
-  AcceptLanguageResolver,
-  CookieResolver,
-  I18nModule,
-  QueryResolver,
-} from 'nestjs-i18n';
+import { AcceptLanguageResolver, CookieResolver, I18nModule, QueryResolver } from 'nestjs-i18n';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LangMiddleware } from './middleware/lang.middleware';
