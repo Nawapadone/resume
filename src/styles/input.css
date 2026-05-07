@@ -12,6 +12,23 @@
   }
 }
 
+@media print {
+  .card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
 @layer components {
   .section-title {
     @apply text-2xl font-bold text-slate-800 dark:text-slate-100 mb-8 flex items-center gap-3;

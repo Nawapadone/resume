@@ -5,3 +5,4 @@ public/styles/output.css
 *.env.local
 .DS_Store
 *.tsbuildinfo
+deploy.sh

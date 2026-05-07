@@ -1,0 +1,12 @@
+node_modules
+dist
+.git
+.gitignore
+.vscode
+.claude
+*.md
+*.tsbuildinfo
+public/styles/output.css
+.env
+*.env.local
+.DS_Store

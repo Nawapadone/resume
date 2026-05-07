@@ -6,7 +6,8 @@
   "nav_projects": "โปรเจกต์",
   "nav_contact": "ติดต่อ",
 
-  "hero_greeting": "สวัสดี ผมชื่อ",
+  "hero_greeting": "นาย",
+  "hero_name": "นวปฎล จันทร์เพ็ง",
   "hero_title": "วิศวกรซอฟต์แวร์อาวุโส",
   "hero_subtitle": "สร้างระบบที่รองรับการขยายตัวและประสบการณ์นักพัฒนาที่ยอดเยี่ยม — กว่า 7 ปีในการแปลงปัญหาซับซ้อนให้เป็นโซลูชันที่หรูหรา",
   "hero_cta_contact": "ติดต่อฉัน",
@@ -29,6 +30,7 @@
   "contact_location_label": "ที่อยู่",
   "contact_github_label": "GitHub",
   "contact_linkedin_label": "LinkedIn",
+  "contact_qr_label": "สแกนเพื่อดูออนไลน์",
 
   "footer_built_with": "สร้างด้วย NestJS · TypeScript · Tailwind CSS",
   "footer_rights": "สงวนลิขสิทธิ์",

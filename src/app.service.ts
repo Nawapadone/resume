@@ -13,7 +13,7 @@ export interface Project {
   name: string;
   description: string;
   tech: string[];
-  link: string;
+  link?: string;
 }
 
 export interface Education {
@@ -30,8 +30,7 @@ export interface SkillGroup {
 }
 
 export interface ResumeData {
-  name: string;
-  nameInitials: string;
+  resumeUrl: string;
   title: string;
   email: string;
   phone: string;
@@ -50,8 +49,7 @@ export interface ResumeData {
 export class AppService {
   getResumeData(): ResumeData {
     return {
-      name: 'Nawapadone Chanpeng',
-      nameInitials: 'NC',
+      resumeUrl: 'https://resume-1095111777002.asia-southeast1.run.app',
       title: 'Software Engineer',
       email: 'nawapadone.c@gmail.com',
       phone: '+66 8 4316 0055',
@@ -59,7 +57,7 @@ export class AppService {
       github: 'github.com/nawapadone',
       linkedin: 'linkedin.com/in/nawapadone',
       summary:
-        'Software Engineer with experience across the full stack — from interactive frontends to backend services and mobile applications. Worked across fintech, e-commerce, and financial markets, with a current focus on web applications at Merkle Capital (Cryptomind Group)',
+        "Senior Software Engineer with 5+ years of experience architecting and delivering full-stack web and mobile applications across fintech, digital assets, e-commerce, and financial markets. Proven track record of leading end-to-end product development — from system design and API integration to compliance-driven workflows and real-time data pipelines. Currently at Merkle Capital (Cryptomind Group), Thailand's first SEC-licensed digital asset fund manager, where I own the investor-facing platform, portfolio tracking systems, and regulatory-compliant KYC infrastructure.",
       experience: [
         {
           title: 'Software Engineer',
@@ -136,21 +134,20 @@ export class AppService {
           description:
             'An online card platform for small businesses (e.g. bubble tea stands) on web and mobile.',
           tech: ['React Native', 'Vue.js', 'Parse Server'],
-          link: 'github.com/Nawapadone',
         },
         {
           name: 'BARS (Bar And Bistro Reservation System)',
           description:
             'A reservation management system for small bars that allows staff to view/edit reservation info, and a chatbot that allows customers to make reservations manually.',
           tech: ['Vue.js', 'Parse Server', 'Messenger Platform'],
-          link: 'github.com/Nawapadone',
+          // link: 'github.com/Nawapadone',
         },
         {
           name: 'AODAOM (A Coin Counting Smart PiggyBank)',
           description:
             'An IoT smart piggybank that tracks its balance using image processing and machine learning on a mobile app.',
           tech: ['React Native', 'OpenCV', 'Express.js', 'Google Cloud Platform'],
-          link: 'github.com/Nawapadone',
+          // link: 'github.com/Nawapadone',
         },
       ],
       projectAchievements: [

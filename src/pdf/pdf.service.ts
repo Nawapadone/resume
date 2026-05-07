@@ -23,6 +23,21 @@ export class PdfService {
             min-height: 297mm;
             background-color: #ffffff !important;
           }
+          header, footer {
+            display: none !important;
+          }
+          .card {
+            break-inside: avoid;
+            page-break-inside: avoid;
+          }
+          section {
+            break-inside: avoid;
+            page-break-inside: avoid;
+          }
+          li {
+            break-inside: avoid;
+            page-break-inside: avoid;
+          }
         `,
       });
       const pdf = await page.pdf({

@@ -11,6 +11,7 @@ const TRANSLATION_KEYS = [
   'nav_projects',
   'nav_contact',
   'hero_greeting',
+  'hero_name',
   'hero_title',
   'hero_subtitle',
   'hero_cta_contact',
