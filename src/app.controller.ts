@@ -51,12 +51,45 @@ export class AppController {
       TRANSLATION_KEYS.map((key) => [key, String(i18n.t(`translation.${key}`))]),
     ) as Translations;
 
+    const resume = this.appService.getResumeData();
+    const baseUrl = resume.resumeUrl;
+    const enUrl = baseUrl;
+    const thUrl = `${baseUrl}/?lang=th`;
+    const canonicalUrl = lang === 'en' ? enUrl : thUrl;
+    const ogLocale = lang === 'en' ? 'en_US' : 'th_TH';
+    const ogLocaleAlt = lang === 'en' ? 'th_TH' : 'en_US';
+    const shortDescription = `${resume.name} — ${resume.title} based in ${resume.location}.`;
+
+    const jsonLd = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: resume.name,
+      jobTitle: resume.title,
+      email: `mailto:${resume.email}`,
+      telephone: resume.phone,
+      url: baseUrl,
+      image: `${enUrl}/og-image.png`,
+      sameAs: [`https://${resume.github}`, `https://${resume.linkedin}`],
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: resume.location,
+      },
+      description: resume.summary,
+    });
+
     res.render('index', {
       t,
       lang,
       alternateLang,
-      resume: this.appService.getResumeData(),
+      resume,
       currentYear: new Date().getFullYear(),
+      canonicalUrl,
+      enUrl,
+      thUrl,
+      ogLocale,
+      ogLocaleAlt,
+      shortDescription,
+      jsonLd,
     });
   }
 }

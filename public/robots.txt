@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nawapadone.me/sitemap.xml

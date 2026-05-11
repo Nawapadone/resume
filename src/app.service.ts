@@ -31,6 +31,7 @@ export interface SkillGroup {
 
 export interface ResumeData {
   resumeUrl: string;
+  name: string;
   title: string;
   email: string;
   phone: string;
@@ -49,7 +50,8 @@ export interface ResumeData {
 export class AppService {
   getResumeData(): ResumeData {
     return {
-      resumeUrl: 'https://resume-1095111777002.asia-southeast1.run.app',
+      resumeUrl: 'https://nawapadone.me',
+      name: 'Nawapadone',
       title: 'Software Engineer',
       email: 'nawapadone.c@gmail.com',
       phone: '+66 8 4316 0055',
