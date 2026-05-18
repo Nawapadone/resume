@@ -42,6 +42,11 @@ type Translations = Record<TranslationKey, string>;
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
+  @Get('health')
+  health(): { status: string } {
+    return { status: 'ok' };
+  }
+
   @Get()
   index(@Res() res: Response, @I18n() i18n: I18nContext): void {
     const lang = i18n.lang;

@@ -180,23 +180,11 @@ export class AppService {
         },
         {
           category: 'Backend',
-          skills: ['NestJS', 'Node.js', 'Express', 'FastAPI', 'gRPC', 'REST', 'GraphQL'],
+          skills: ['NestJS', 'Node.js', 'Express', 'FastAPI', 'REST'],
         },
         {
           category: 'Frontend',
-          skills: [
-            'React',
-            'Next.js',
-            'Vue.js',
-            'Nuxt.js',
-            'Angular',
-            'Polymer',
-            'Material UI',
-            'Buefy',
-            'Tailwind CSS',
-            'HTML5',
-            'CSS3',
-          ],
+          skills: ['React', 'Next.js', 'Vue.js', 'Nuxt.js', 'Tailwind CSS', 'HTML5', 'CSS3'],
         },
         {
           category: 'Mobile',
@@ -204,19 +192,11 @@ export class AppService {
         },
         {
           category: 'Databases',
-          skills: [
-            'PostgreSQL',
-            'MySQL',
-            'MongoDB',
-            'Redis',
-            'Elasticsearch',
-            'ClickHouse',
-            'Firebase',
-          ],
+          skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Firebase'],
         },
         {
           category: 'Cloud & DevOps',
-          skills: ['AWS', 'GCP', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions'],
+          skills: ['GCP', 'Docker', 'Kubernetes', 'GitHub Actions'],
         },
       ],
     };
