@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{resume.name}} — {{t.hero_title}}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: #1c1917;
+      background: #ffffff;
+      line-height: 1.55;
+    }
+
+    .cv-wrap {
+      max-width: 100%;
+    }
+
+    /* ── Header ── */
+    .cv-header {
+      border-bottom: 2px solid #e7e5e0;
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+    }
+    .cv-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: #1c1917;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .cv-job-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #b45309;
+      margin-bottom: 8px;
+    }
+    .cv-contact {
+      font-size: 10px;
+      color: #57534e;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    .cv-contact-item::after {
+      content: ' · ';
+      color: #d6d3d1;
+      white-space: pre;
+    }
+    .cv-contact-item:last-child::after {
+      content: '';
+    }
+
+    /* ── Section ── */
+    .cv-section {
+      margin-bottom: 14px;
+    }
+    .cv-section-title {
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #a8a29e;
+      border-bottom: 1px solid #e7e5e0;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    /* ── Timeline (Experience) ── */
+    .cv-timeline {
+      border-left: 2px solid #e7e5e0;
+      padding-left: 20px;
+      margin-left: 2px;
+    }
+    .cv-entry {
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .cv-entry:last-child {
+      margin-bottom: 0;
+    }
+    .cv-entry::before {
+      content: '';
+      position: absolute;
+      left: -25px;
+      top: 4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2px solid #b45309;
+    }
+    .cv-entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 1px;
+    }
+    .cv-entry-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #1c1917;
+    }
+    .cv-entry-period {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: #a8a29e;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .cv-entry-company {
+      font-size: 10px;
+      color: #b45309;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .cv-bullets {
+      list-style: none;
+      margin-bottom: 6px;
+    }
+    .cv-bullets li {
+      font-size: 9.5px;
+      color: #57534e;
+      line-height: 1.5;
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 3px;
+    }
+    .cv-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #d6d3d1;
+    }
+    .cv-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+    }
+    .cv-badge {
+      font-size: 8px;
+      background: #f5f0e8;
+      color: #78716c;
+      border: 1px solid #e7e0d6;
+      border-radius: 100px;
+      padding: 1px 6px;
+    }
+
+    /* ── Skills ── */
+    .cv-skill-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 5px;
+      font-size: 10px;
+    }
+    .cv-skill-category {
+      font-weight: 600;
+      color: #1c1917;
+      min-width: 80px;
+      flex-shrink: 0;
+    }
+    .cv-skill-list {
+      color: #57534e;
+    }
+
+    /* ── Projects ── */
+    .cv-project {
+      margin-bottom: 10px;
+    }
+    .cv-project:last-child {
+      margin-bottom: 0;
+    }
+    .cv-project-header {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 2px;
+    }
+    .cv-project-name {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #1c1917;
+    }
+    .cv-project-link {
+      font-size: 8.5px;
+      color: #b45309;
+      font-family: 'JetBrains Mono', monospace;
+      text-decoration: none;
+    }
+    .cv-project-desc {
+      font-size: 9px;
+      color: #57534e;
+      line-height: 1.5;
+    }
+    .cv-project-tech {
+      font-size: 8.5px;
+      color: #a8a29e;
+      font-family: 'JetBrains Mono', monospace;
+      margin-top: 2px;
+    }
+
+    /* ── Education ── */
+    .cv-edu-entry {
+      margin-bottom: 10px;
+    }
+    .cv-edu-entry:last-child {
+      margin-bottom: 0;
+    }
+    .cv-edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .cv-edu-degree {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #1c1917;
+    }
+    .cv-edu-period {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: #a8a29e;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .cv-edu-institution {
+      font-size: 9.5px;
+      color: #b45309;
+      font-weight: 600;
+    }
+
+    /* ── Achievements ── */
+    .cv-achievements {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 10px;
+    }
+    .cv-achievement-label {
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #a8a29e;
+      margin-bottom: 6px;
+    }
+
+    /* ── Page break ── */
+    .page-break {
+      page-break-before: always;
+      break-before: always;
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-wrap">
+    {{{body}}}
+  </div>
+</body>
+</html>

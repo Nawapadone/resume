@@ -1,0 +1,26 @@
+<section class="cv-section">
+  <div class="cv-section-title">{{t.proj_section_title}}</div>
+  {{#each resume.projects}}
+  <div class="cv-project">
+    <div class="cv-project-header">
+      <span class="cv-project-name">{{this.name}}</span>
+      {{#if this.link}}
+      <span class="cv-project-link">{{this.link}}</span>
+      {{/if}}
+    </div>
+    <div class="cv-project-desc">{{this.description}}</div>
+    <div class="cv-project-tech">{{join this.tech ' · '}}</div>
+  </div>
+  {{/each}}
+
+  {{#if resume.projectAchievements}}
+  <div style="margin-top:12px;">
+    <div class="cv-achievement-label">{{t.proj_achievements_title}}</div>
+    <div class="cv-achievements">
+      {{#each resume.projectAchievements}}
+      <span class="cv-badge">{{this}}</span>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+</section>

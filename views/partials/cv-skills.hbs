@@ -1,0 +1,9 @@
+<section class="cv-section">
+  <div class="cv-section-title">{{t.skills_section_title}}</div>
+  {{#each resume.skillGroups}}
+  <div class="cv-skill-row">
+    <span class="cv-skill-category">{{this.category}}</span>
+    <span class="cv-skill-list">{{join this.skills ' · '}}</span>
+  </div>
+  {{/each}}
+</section>

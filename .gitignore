@@ -6,3 +6,4 @@ public/styles/output.css
 .DS_Store
 *.tsbuildinfo
 deploy.sh
+.superpowers/

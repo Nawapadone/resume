@@ -2,70 +2,391 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─────────────────────────────────────────
+   COLOR TOKENS (inline-style overridable)
+───────────────────────────────────────── */
+
+:root {
+  --c-body:        #57534e;
+  --c-muted:       #a8a29e;
+  --c-secondary:   #78716c;
+  --c-accent-icon: #b45309;
+}
+.dark {
+  --c-body:        #94a3b8;
+  --c-muted:       #718096;
+  --c-secondary:   #94a3b8;
+  --c-accent-icon: #6366f1;
+}
+
+/* ─────────────────────────────────────────
+   BASE
+───────────────────────────────────────── */
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
+  /* Tone C (default light — no dark class) */
   body {
-    @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300;
+    background-color: #faf8f5;
+    color: #1c1917;
+    @apply font-sans antialiased transition-colors duration-300;
+  }
+
+  /* Tone B (dark class present) */
+  .dark body {
+    background-color: #08080f;
+    color: #e2e8f0;
   }
 }
+
+/* ─────────────────────────────────────────
+   PRINT (PDF)
+───────────────────────────────────────── */
 
 @media print {
+  .card { break-inside: avoid; page-break-inside: avoid; }
+  section { break-inside: avoid; page-break-inside: avoid; }
+  li { break-inside: avoid; page-break-inside: avoid; }
+}
+
+/* ─────────────────────────────────────────
+   COMPONENTS
+───────────────────────────────────────── */
+
+@layer components {
+
+  /* Section title */
+  .section-title {
+    @apply text-2xl font-bold mb-8 flex items-center gap-3;
+    color: #1c1917;
+  }
+  .dark .section-title {
+    color: #e2e8f0;
+  }
+
+  /* Accent bar (left of section title) */
+  .accent-bar {
+    @apply w-1 h-6 rounded-full inline-block flex-shrink-0;
+    background-color: #b45309; /* Tone C: amber */
+  }
+  .dark .accent-bar {
+    background-color: #6366f1; /* Tone B: indigo */
+  }
+
+  /* Card */
   .card {
-    break-inside: avoid;
-    page-break-inside: avoid;
+    @apply rounded-xl border p-6 transition-shadow duration-200;
+    background-color: #ffffff;
+    border-color: #e7e5e0;
+  }
+  .card:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .dark .card {
+    background-color: rgba(255,255,255,0.03);
+    border-color: rgba(255,255,255,0.07);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+  .dark .card:hover {
+    box-shadow: none;
+    border-color: rgba(255,255,255,0.12);
   }
 
-  section {
-    break-inside: avoid;
-    page-break-inside: avoid;
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border;
+    background-color: #f5f0e8;
+    color: #78716c;
+    border-color: #e7e0d6;
+  }
+  .dark .badge {
+    background-color: rgba(99,102,241,0.15);
+    color: #818cf8;
+    border-color: rgba(99,102,241,0.2);
   }
 
-  li {
-    break-inside: avoid;
-    page-break-inside: avoid;
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-lg transition-all duration-200 shadow-sm;
+    background-color: #1c1917;
+    color: #faf8f5;
+  }
+  .btn-primary:hover {
+    background-color: #292524;
+  }
+  .dark .btn-primary {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #ffffff;
+    box-shadow: 0 0 16px rgba(99,102,241,0.35);
+  }
+  .dark .btn-primary:hover {
+    box-shadow: 0 0 24px rgba(99,102,241,0.5);
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-lg transition-colors duration-200;
+    border: 1px solid #d6d3d1;
+    color: #57534e;
+    background: transparent;
+  }
+  .btn-secondary:hover {
+    background-color: #f5f0e8;
+  }
+  .dark .btn-secondary {
+    border-color: rgba(99,102,241,0.4);
+    color: #a5b4fc;
+  }
+  .dark .btn-secondary:hover {
+    background-color: rgba(99,102,241,0.08);
+  }
+
+  /* Nav link */
+  .nav-link {
+    @apply text-sm font-medium transition-colors duration-200;
+    color: #78716c;
+  }
+  .nav-link:hover {
+    color: #b45309;
+  }
+  .dark .nav-link {
+    color: #64748b;
+  }
+  .dark .nav-link:hover {
+    color: #818cf8;
+  }
+
+  /* Icon button */
+  .icon-btn {
+    @apply p-2 rounded-lg transition-colors duration-200;
+    color: #78716c;
+  }
+  .icon-btn:hover {
+    color: #1c1917;
+    background-color: #f5f0e8;
+  }
+  .dark .icon-btn {
+    color: #64748b;
+  }
+  .dark .icon-btn:hover {
+    color: #e2e8f0;
+    background-color: rgba(255,255,255,0.06);
   }
 }
 
+/* ─────────────────────────────────────────
+   TONE B — Bold & Modern (dark specifics)
+───────────────────────────────────────── */
+
+/* Hero gradient name */
+.dark .hero-name {
+  background: linear-gradient(135deg, #e2e8f0 30%, #a5b4fc 70%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero glow blobs */
+.hero-glow-1 {
+  display: none;
+  position: absolute;
+  top: -60px; right: -40px;
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%);
+  pointer-events: none;
+  border-radius: 50%;
+}
+.hero-glow-2 {
+  display: none;
+  position: absolute;
+  bottom: -40px; left: 10px;
+  width: 160px; height: 160px;
+  background: radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%);
+  pointer-events: none;
+  border-radius: 50%;
+}
+.dark .hero-glow-1,
+.dark .hero-glow-2 {
+  display: block;
+}
+
+/* Section title in Tone B */
+.dark .section-title {
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+/* Experience bullet prefix override for Tone B */
+.dark .exp-bullet-icon {
+  color: #818cf8;
+}
+
+/* ─────────────────────────────────────────
+   TONE C — Editorial & Timeless (light specifics)
+───────────────────────────────────────── */
+
+/* Serif display headings */
+:root:not(.dark) .hero-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+/* Hero name span: amber */
+:root:not(.dark) .hero-name {
+  color: #b45309;
+}
+
+/* Section title: uppercase + full-width rule */
+:root:not(.dark) .section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #a8a29e;
+  font-family: 'Inter', sans-serif;
+}
+:root:not(.dark) .section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e7e5e0;
+}
+:root:not(.dark) .accent-bar {
+  display: none;
+}
+
+/* Alternate section backgrounds (experience, education, contact) */
+:root:not(.dark) .bg-slate-100\/60 {
+  background-color: rgba(245, 240, 232, 0.6);
+}
+html.dark #experience,
+html.dark #education,
+html.dark #contact {
+  background-color: rgba(8, 8, 15, 0.4);
+}
+
+/* Experience timeline for Tone C */
+:root:not(.dark) #experience .card {
+  background: transparent;
+  border: none;
+  border-left: 2px solid #e7e5e0;
+  border-radius: 0;
+  padding: 0 0 20px 20px;
+  position: relative;
+  box-shadow: none;
+}
+:root:not(.dark) #experience .card::before {
+  content: '';
+  position: absolute;
+  left: -5px; top: 4px;
+  width: 8px; height: 8px;
+  background: #faf8f5;
+  border: 2px solid #b45309;
+  border-radius: 50%;
+}
+:root:not(.dark) #experience .card:hover {
+  box-shadow: none;
+  border-color: #e7e5e0;
+}
+:root:not(.dark) #experience .space-y-5 {
+  gap: 0;
+}
+
+/* Company name: amber in Tone C */
+:root:not(.dark) .exp-company {
+  color: #b45309;
+}
+
+/* Exp bullet in Tone C: em dash */
+:root:not(.dark) .exp-bullet-icon {
+  display: none;
+}
+:root:not(.dark) li.exp-bullet::before {
+  content: '—';
+  color: #d6d3d1;
+  flex-shrink: 0;
+  margin-right: 8px;
+}
+
+/* ─────────────────────────────────────────
+   SCROLL ANIMATIONS
+───────────────────────────────────────── */
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animate],
+  [data-animate].is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .scroll-cue svg {
+    animation: none;
+  }
+}
+
+/* ─────────────────────────────────────────
+   SCROLL CUE (bouncing chevron)
+───────────────────────────────────────── */
+
+.scroll-cue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding-top: 2rem;
+  opacity: 0.65;
+  transition: opacity 0.5s ease;
+}
+.scroll-cue.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.scroll-cue svg {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: block;
+  animation: scroll-bounce 1.6s ease-in-out infinite;
+  color: #b45309;
+}
+.scroll-cue svg:last-child {
+  animation-delay: 0.2s;
+  opacity: 0.45;
+}
+.dark .scroll-cue svg {
+  color: #6366f1;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(9px); }
+}
+
+/* ─────────────────────────────────────────
+   LEGACY (animations kept from original)
+───────────────────────────────────────── */
+
 @layer components {
-  .section-title {
-    @apply text-2xl font-bold text-slate-800 dark:text-slate-100 mb-8 flex items-center gap-3;
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
   }
+}
 
-  .card {
-    @apply bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm hover:shadow-md transition-shadow duration-200;
-  }
-
-  .badge {
-    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
-           bg-accent-100 dark:bg-accent-900/40 text-accent-700 dark:text-accent-300;
-  }
-
-  .btn-primary {
-    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-accent-600 hover:bg-accent-700
-           text-white text-sm font-semibold rounded-lg transition-colors duration-200 shadow-sm;
-  }
-
-  .btn-secondary {
-    @apply inline-flex items-center gap-2 px-5 py-2.5 border border-slate-300 dark:border-slate-700
-           hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300
-           text-sm font-semibold rounded-lg transition-colors duration-200;
-  }
-
-  .nav-link {
-    @apply text-sm text-slate-600 dark:text-slate-400 hover:text-accent-600 dark:hover:text-accent-400
-           transition-colors duration-200 font-medium;
-  }
-
-  .icon-btn {
-    @apply p-2 rounded-lg text-slate-500 dark:text-slate-400
-           hover:text-slate-800 dark:hover:text-slate-200
-           hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200;
-  }
-
-  .accent-bar {
-    @apply w-1 h-6 bg-accent-500 rounded-full inline-block flex-shrink-0;
-  }
+@keyframes fadeIn {
+  0%   { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
 }

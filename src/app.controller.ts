@@ -38,6 +38,19 @@ const TRANSLATION_KEYS = [
 type TranslationKey = (typeof TRANSLATION_KEYS)[number];
 type Translations = Record<TranslationKey, string>;
 
+const CV_TRANSLATION_KEYS = [
+  'hero_name',
+  'hero_title',
+  'exp_section_title',
+  'skills_section_title',
+  'edu_section_title',
+  'proj_section_title',
+  'proj_achievements_title',
+] as const;
+
+type CvTranslationKey = (typeof CV_TRANSLATION_KEYS)[number];
+type CvTranslations = Record<CvTranslationKey, string>;
+
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
@@ -96,5 +109,15 @@ export class AppController {
       shortDescription,
       jsonLd,
     });
+  }
+
+  @Get('cv-print')
+  cvPrint(@Res() res: Response, @I18n() i18n: I18nContext): void {
+    const lang = i18n.lang;
+    const t = Object.fromEntries(
+      CV_TRANSLATION_KEYS.map((key) => [key, String(i18n.t(`translation.${key}`))]),
+    ) as CvTranslations;
+    const resume = this.appService.getResumeData();
+    res.render('cv-print', { layout: 'cv-print', t, lang, resume });
   }
 }

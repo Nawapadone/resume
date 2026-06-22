@@ -21,6 +21,7 @@ async function bootstrap(): Promise<void> {
       defaultLayout: 'main',
       helpers: {
         eq: (a: unknown, b: unknown) => a === b,
+        join: (arr: unknown, separator: string) => Array.isArray(arr) ? arr.join(separator) : '',
       },
     }),
   );

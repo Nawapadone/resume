@@ -1,0 +1,12 @@
+<section class="cv-section">
+  <div class="cv-section-title">{{t.edu_section_title}}</div>
+  {{#each resume.education}}
+  <div class="cv-edu-entry">
+    <div class="cv-edu-header">
+      <span class="cv-edu-degree">{{this.degree}}</span>
+      <span class="cv-edu-period">{{this.period}}</span>
+    </div>
+    <div class="cv-edu-institution">{{this.institution}} · {{this.location}}</div>
+  </div>
+  {{/each}}
+</section>
