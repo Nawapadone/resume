@@ -52,28 +52,40 @@ export class AppService {
     return {
       resumeUrl: 'https://nawapadone.me',
       name: 'Nawapadone',
-      title: 'Software Engineer',
+      title: 'Senior Software Engineer',
       email: 'nawapadone.c@gmail.com',
       phone: '+66 8 4316 0055',
       location: 'Bangkok, Thailand',
       github: 'github.com/nawapadone',
       linkedin: 'linkedin.com/in/nawapadone',
       summary:
-        "Senior Software Engineer with 5+ years of experience architecting and delivering full-stack web and mobile applications across fintech, digital assets, e-commerce, and financial markets. Proven track record of leading end-to-end product development — from system design and API integration to compliance-driven workflows and real-time data pipelines. Currently at Merkle Capital (Cryptomind Group), Thailand's first SEC-licensed digital asset fund manager, where I own the investor-facing platform, portfolio tracking systems, and regulatory-compliant KYC infrastructure.",
+        "Senior Software Engineer with 5+ years building full-stack products in fintech and digital assets. Specialized in SEC-compliant KYC flows, real-time financial data pipelines, and investor-facing platforms. Currently at Merkle Capital — Thailand's first SEC-licensed digital asset fund manager.",
       experience: [
         {
-          title: 'Software Engineer',
+          title: 'Senior Software Engineer',
           company: 'Merkle Capital (Cryptomind Group)',
           location: 'Bangkok, Thailand',
           period: 'April 2024 – Present',
           bullets: [
-            "Built and maintained the company website (merkle.capital) showcasing investment strategies, fund performance, and onboarding flows for Thailand's first SEC-licensed digital asset fund manager.",
-            'Developed client-facing features for portfolio tracking, deposit/withdrawal flows, and KYC integration, enabling retail investors to invest in digital assets',
+            "Owned end-to-end development across 3 products at Thailand's first SEC-licensed digital asset fund manager — merkle.capital (investor-facing platform), Elkrem (internal product), and the shared backend infrastructure including API services, deployment pipelines, and GCP cloud configuration.",
+            'Built and maintained merkle.capital, integrating a CMS for investment strategy content so non-technical teams could manage fund performance pages and onboarding flows independently.',
+            'Developed investor-facing portfolio tracking, deposit/withdrawal flows, and KYC onboarding, integrating DOPA (Thai national ID verification), liveness detection, UPPass, and e-stamp for SEC-compliant identity verification.',
             'Integrated real-time market data and portfolio valuation APIs to display NAV, asset allocation, and performance metrics across multiple investment strategies.',
-            'Implemented secure authentication and compliance-driven workflows aligned with Thai SEC regulations for digital asset fund management.',
-            'Collaborated with investment, risk, and operations teams to translate fund strategies (Merkle Framework, rebalancing logic) into user-facing dashboards.',
+            "Built LINE channel integrations (LINE OA, LINE LIFF, Flex Message, Rich Menu) to support investor communications and onboarding flows through Thailand's primary messaging platform.",
+            'Integrated SendGrid for transactional email and OTP delivery, supporting secure authentication and investor notification workflows.',
+            'Engineered a historical transaction backfill pipeline to reconcile and migrate all existing customer financial records, ensuring investment portfolio data integrity across the platform.',
+            'Collaborated with investment, risk, and operations teams to translate fund strategies (Merkle Framework, rebalancing logic) into user-facing dashboards aligned with Thai SEC compliance requirements.',
           ],
-          tech: ['React', 'Next.js', 'TypeScript', 'Node.js', 'REST APIs'],
+          tech: [
+            'React',
+            'Next.js',
+            'TypeScript',
+            'NestJS',
+            'Node.js',
+            'PostgreSQL',
+            'Strapi',
+            'REST APIs',
+          ],
         },
         {
           title: 'Software Engineer',
@@ -81,8 +93,9 @@ export class AppService {
           location: 'Bangkok, Thailand',
           period: 'Jun 2022 – Jan 2024',
           bullets: [
-            'Designed and developed financial markets and data web applications using Polymer and Angular.',
-            'Migrated and improved the backend from C# to JavaScript, retrieving data from databases.',
+            'Diagnosed and resolved chart and graph rendering bugs in Refinitiv Workspace/Eikon — a real-time financial data platform used by 400,000+ professionals globally — tracing root causes to faulty server-side data queries delivering incorrect market data.',
+            'Migrated server-side data query logic from C# to JavaScript to consolidate data retrieval closer to the frontend layer, eliminating indirect data fetching paths that caused rendering inconsistencies across financial dashboards.',
+            'Contributed to a Polymer-to-Angular frontend migration of Refinitiv Workspace/Eikon, ensuring data accuracy and graph rendering correctness were preserved throughout the platform transition.',
           ],
           tech: ['Polymer', 'Angular', 'JavaScript', 'C#'],
         },
@@ -92,21 +105,23 @@ export class AppService {
           location: 'Bangkok, Thailand',
           period: 'May 2021 – Jun 2022',
           bullets: [
-            'Designed and developed a warehouse management system on the web using React.',
-            'Designed and developed a mobile application for receiving product lists, arranging products, and managing delivery using Flutter.',
+            "Developed and shipped features for a React-based web admin system used across 7-Eleven Thailand's 13,000+ locations, improving store staff workflows for day-to-day inventory and operations management.",
+            'Built and extended a Flutter mobile app for 7-Eleven delivery order management, covering the full order lifecycle from receipt and product arrangement through payment collection and completion.',
           ],
           tech: ['React', 'Flutter'],
         },
         {
-          title: 'Full Stack Developer (Internship + Probation)',
+          title: 'Full Stack Developer (Internship)',
           company: 'Kept by Krungsri',
           location: 'Bangkok, Thailand',
           period: 'Jan 2021 – Apr 2021',
           bullets: [
-            'Designed and developed an Android mobile application.',
-            'Built a facial verification system using Python for identity confirmation (Face Recognition).',
+            'Conducted a POC to evaluate migrating the Kept app from a Chinese cross-platform framework to Flutter, prototyping a face recognition feature for Thai national ID verification as part of a KYC onboarding flow.',
+            'Built a Python Flask API serving face recognition and Thai ID card OCR endpoints as the backend for the identity verification system.',
+            "Fine-tuned Facebook's DeepFace face-comparison model to achieve similarity scores above the 0.75 threshold required for reliable identity matching.",
+            'Developed frontend for the "Together Savings" feature — a collaborative piggy bank allowing users to invite friends to shared saving goals, with real-time deposit notifications and transparent transaction history for all participants.',
           ],
-          tech: ['Android', 'Python', 'Face Recognition'],
+          tech: ['Flutter', 'Python', 'Flask', 'DeepFace', 'OCR'],
         },
         {
           title: 'Front-End Developer (Internship)',
@@ -114,8 +129,8 @@ export class AppService {
           location: 'Bangkok, Thailand',
           period: 'Jun 2020 – Jul 2020',
           bullets: [
-            'Designed and developed a Real-Time Interface Monitor on a web application using Vue.js and Buefy.',
-            'Integrated Firebase for real-time database functionality.',
+            'Built a real-time operations dashboard using Vue.js and Buefy to display live telemetry from IoT card-reader devices, enabling operations staff to monitor device status and transaction data at a glance.',
+            'Integrated Firebase Realtime Database as the data layer, streaming continuous IoT device updates to the UI with sub-second latency without polling.',
           ],
           tech: ['Vue.js', 'Buefy', 'Firebase'],
         },
@@ -125,12 +140,34 @@ export class AppService {
           location: 'Bangkok, Thailand',
           period: 'Jun 2019 – Jul 2019',
           bullets: [
-            'Designed and developed a landing page with server-side rendering (SSR) support using Nuxt.js and Material UI.',
+            "Designed and developed SEO-optimized marketing landing pages with SSR using Nuxt.js, improving organic discoverability for Sellsuki's SME merchant clients.",
+            'Owned end-to-end UX/UI design in Figma and translated mockups into pixel-perfect frontend implementations.',
+            'Integrated Google Analytics (gtag) and Firebase Analytics for campaign tracking, and connected a transactional email delivery system.',
+            "Built LINE channel features (LINE Flex Message, LINE LIFF, LINE Messaging API bot) leveraging Sellsuki's LINE Business Partner status to extend merchant reach on Thailand's largest messaging platform.",
           ],
-          tech: ['Nuxt.js', 'Material UI'],
+          tech: ['Nuxt.js', 'Material UI', 'Figma', 'Firebase', 'LINE Messaging API'],
         },
       ],
       projects: [
+        {
+          name: 'nawapadone.me (Web Resume)',
+          description:
+            'A bilingual (EN/TH) server-side rendered resume website with dark mode, PDF export, and QR code. Built with NestJS and Handlebars, styled with Tailwind CSS, and deployed as a Docker container on Google Cloud Run.',
+          tech: ['NestJS', 'Handlebars', 'Tailwind CSS', 'Docker', 'GCP'],
+          link: 'nawapadone.me',
+        },
+        {
+          name: 'Phone Price Tracker',
+          description:
+            'A daily web scraper that tracks used phone listings on a Thai online marketplace, infers sold prices via listing disappearance detection, and visualizes ask vs. sold price trends per model on a Streamlit dashboard. Includes an MCP server for querying data via Claude.',
+          tech: ['Python', 'BeautifulSoup', 'SQLAlchemy', 'Streamlit', 'Plotly', 'MCP'],
+        },
+        {
+          name: 'AmCoco LINE Bot',
+          description:
+            'A production-ready LINE Bot webhook API with structured architecture, Firestore integration, signature validation, rate limiting, and Thai language support. Deployed on GCP via Cloud Build.',
+          tech: ['Bun', 'Fastify', 'TypeScript', 'Firestore', 'GCP'],
+        },
         {
           name: 'DIZCARD (Phase 2)',
           description:
@@ -142,14 +179,12 @@ export class AppService {
           description:
             'A reservation management system for small bars that allows staff to view/edit reservation info, and a chatbot that allows customers to make reservations manually.',
           tech: ['Vue.js', 'Parse Server', 'Messenger Platform'],
-          // link: 'github.com/Nawapadone',
         },
         {
           name: 'AODAOM (A Coin Counting Smart PiggyBank)',
           description:
             'An IoT smart piggybank that tracks its balance using image processing and machine learning on a mobile app.',
           tech: ['React Native', 'OpenCV', 'Express.js', 'Google Cloud Platform'],
-          // link: 'github.com/Nawapadone',
         },
       ],
       projectAchievements: [
@@ -180,15 +215,24 @@ export class AppService {
         },
         {
           category: 'Backend',
-          skills: ['NestJS', 'Node.js', 'Express', 'FastAPI', 'REST'],
+          skills: ['NestJS', 'Node.js', 'Express', 'Fastify', 'Bun', 'FastAPI', 'REST'],
         },
         {
           category: 'Frontend',
-          skills: ['React', 'Next.js', 'Vue.js', 'Nuxt.js', 'Tailwind CSS', 'HTML5', 'CSS3'],
+          skills: [
+            'React',
+            'Next.js',
+            'Vue.js',
+            'Nuxt.js',
+            'Angular',
+            'Tailwind CSS',
+            'HTML5',
+            'CSS3',
+          ],
         },
         {
           category: 'Mobile',
-          skills: ['Flutter', 'Android'],
+          skills: ['Flutter', 'React Native', 'Android'],
         },
         {
           category: 'Databases',
@@ -196,7 +240,15 @@ export class AppService {
         },
         {
           category: 'Cloud & DevOps',
-          skills: ['GCP', 'Docker', 'Kubernetes', 'GitHub Actions'],
+          skills: ['GCP', 'Docker', 'GitHub Actions'],
+        },
+        {
+          category: 'Integrations',
+          skills: ['LINE Messaging API', 'SendGrid', 'Puppeteer'],
+        },
+        {
+          category: 'Testing',
+          skills: ['Jest', 'Vitest', 'Playwright'],
         },
       ],
     };
