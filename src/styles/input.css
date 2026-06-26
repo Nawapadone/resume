@@ -16,7 +16,7 @@
   --c-body:        #94a3b8;
   --c-muted:       #718096;
   --c-secondary:   #94a3b8;
-  --c-accent-icon: #6366f1;
+  --c-accent-icon: #34d399;
 }
 
 /* ─────────────────────────────────────────
@@ -37,8 +37,8 @@
 
   /* Tone B (dark class present) */
   .dark body {
-    background-color: #08080f;
-    color: #e2e8f0;
+    background-color: #141414;
+    color: #e4e4e7;
   }
 }
 
@@ -73,7 +73,7 @@
     background-color: #b45309; /* Tone C: amber */
   }
   .dark .accent-bar {
-    background-color: #6366f1; /* Tone B: indigo */
+    background-color: #34d399; /* Tone B: emerald */
   }
 
   /* Card */
@@ -86,14 +86,14 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   }
   .dark .card {
-    background-color: rgba(255,255,255,0.03);
-    border-color: rgba(255,255,255,0.07);
+    background-color: rgba(255,255,255,0.05);
+    border-color: rgba(52,211,153,0.10);
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
   }
   .dark .card:hover {
     box-shadow: none;
-    border-color: rgba(255,255,255,0.12);
+    border-color: rgba(52,211,153,0.20);
   }
 
   /* Badge */
@@ -104,9 +104,9 @@
     border-color: #e7e0d6;
   }
   .dark .badge {
-    background-color: rgba(99,102,241,0.15);
-    color: #818cf8;
-    border-color: rgba(99,102,241,0.2);
+    background-color: rgba(52,211,153,0.08);
+    color: #34d399;
+    border-color: rgba(52,211,153,0.18);
   }
 
   /* Primary button */
@@ -119,12 +119,12 @@
     background-color: #292524;
   }
   .dark .btn-primary {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, #059669, #34d399);
     color: #ffffff;
-    box-shadow: 0 0 16px rgba(99,102,241,0.35);
+    box-shadow: 0 0 16px rgba(52,211,153,0.25);
   }
   .dark .btn-primary:hover {
-    box-shadow: 0 0 24px rgba(99,102,241,0.5);
+    box-shadow: 0 0 24px rgba(52,211,153,0.4);
   }
 
   /* Secondary button */
@@ -138,11 +138,11 @@
     background-color: #f5f0e8;
   }
   .dark .btn-secondary {
-    border-color: rgba(99,102,241,0.4);
-    color: #a5b4fc;
+    border-color: rgba(52,211,153,0.35);
+    color: #6ee7b7;
   }
   .dark .btn-secondary:hover {
-    background-color: rgba(99,102,241,0.08);
+    background-color: rgba(52,211,153,0.08);
   }
 
   /* Nav link */
@@ -157,7 +157,7 @@
     color: #64748b;
   }
   .dark .nav-link:hover {
-    color: #818cf8;
+    color: #34d399;
   }
 
   /* Icon button */
@@ -173,7 +173,7 @@
     color: #64748b;
   }
   .dark .icon-btn:hover {
-    color: #e2e8f0;
+    color: #e4e4e7;
     background-color: rgba(255,255,255,0.06);
   }
 }
@@ -184,7 +184,7 @@
 
 /* Hero gradient name */
 .dark .hero-name {
-  background: linear-gradient(135deg, #e2e8f0 30%, #a5b4fc 70%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #f4f4f5 25%, #6ee7b7 60%, #34d399 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -196,7 +196,7 @@
   position: absolute;
   top: -60px; right: -40px;
   width: 220px; height: 220px;
-  background: radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(52,211,153,0.15) 0%, transparent 70%);
   pointer-events: none;
   border-radius: 50%;
 }
@@ -205,7 +205,7 @@
   position: absolute;
   bottom: -40px; left: 10px;
   width: 160px; height: 160px;
-  background: radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(52,211,153,0.1) 0%, transparent 70%);
   pointer-events: none;
   border-radius: 50%;
 }
@@ -222,7 +222,7 @@
 
 /* Experience bullet prefix override for Tone B */
 .dark .exp-bullet-icon {
-  color: #818cf8;
+  color: #34d399;
 }
 
 /* ─────────────────────────────────────────
@@ -267,7 +267,7 @@
 html.dark #experience,
 html.dark #education,
 html.dark #contact {
-  background-color: rgba(8, 8, 15, 0.4);
+  background-color: rgba(20, 20, 20, 0.5);
 }
 
 /* Experience timeline for Tone C */
@@ -368,7 +368,7 @@ html.dark #contact {
   opacity: 0.45;
 }
 .dark .scroll-cue svg {
-  color: #6366f1;
+  color: #34d399;
 }
 
 @keyframes scroll-bounce {
