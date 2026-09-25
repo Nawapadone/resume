@@ -6,7 +6,7 @@ const config = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif'],
+                sans: ['Inter', '"Noto Sans Thai"', 'system-ui', 'sans-serif'],
                 mono: ['"JetBrains Mono"', 'monospace'],
                 display: ['"Playfair Display"', 'Georgia', 'serif'],
             },
