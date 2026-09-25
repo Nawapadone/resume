@@ -19,21 +19,21 @@ Dedicated Handlebars layout + partials (Approach A). Follows existing NestJS/Han
 
 ### New files
 
-| File | Purpose |
-|---|---|
-| `views/layouts/cv-print.hbs` | Minimal layout: no nav, no footer, no JS, inline print CSS |
-| `views/cv-print.hbs` | Top-level view: includes cv-* partials in order |
-| `views/partials/cv-hero.hbs` | Name, title, contact info header |
-| `views/partials/cv-experience.hbs` | Timeline experience section |
-| `views/partials/cv-skills.hbs` | Skill groups |
-| `views/partials/cv-projects.hbs` | Projects list |
-| `views/partials/cv-education.hbs` | Education section |
+| File                               | Purpose                                                    |
+| ---------------------------------- | ---------------------------------------------------------- |
+| `views/layouts/cv-print.hbs`       | Minimal layout: no nav, no footer, no JS, inline print CSS |
+| `views/cv-print.hbs`               | Top-level view: includes cv-\* partials in order           |
+| `views/partials/cv-hero.hbs`       | Name, title, contact info header                           |
+| `views/partials/cv-experience.hbs` | Timeline experience section                                |
+| `views/partials/cv-skills.hbs`     | Skill groups                                               |
+| `views/partials/cv-projects.hbs`   | Projects list                                              |
+| `views/partials/cv-education.hbs`  | Education section                                          |
 
 ### Modified files
 
-| File | Change |
-|---|---|
-| `src/app.controller.ts` | Add `GET /cv-print` route rendering with `layout: 'cv-print'` |
+| File                     | Change                                                                                    |
+| ------------------------ | ----------------------------------------------------------------------------------------- |
+| `src/app.controller.ts`  | Add `GET /cv-print` route rendering with `layout: 'cv-print'`                             |
 | `src/pdf/pdf.service.ts` | Navigate to `/cv-print?lang=...` instead of `/?lang=...`; remove all injected CSS patches |
 
 ## Route & Data Flow
@@ -62,15 +62,16 @@ Matches the website's Tone C aesthetic: Playfair Display serif heading, amber ac
 ### Layout (2 pages A4, 12mm margins)
 
 **Page 1 — Experience**
+
 ```
 ┌─────────────────────────────────────────┐
 │  Nawapadone C.              location    │  Playfair Display 28px #1c1917
-│  // Senior Software Engineer            │  monospace 13px #b45309
+│  // Software Engineer            │  monospace 13px #b45309
 │  email · phone · github · linkedin      │
 │─────────────────────────────────────────│
 │  EXPERIENCE                             │  9px uppercase letter-spacing #a8a29e
 │  │                                      │
-│  ● Senior Software Engineer · Merkle    │  amber dot #b45309
+│  ● Software Engineer · Merkle    │  amber dot #b45309
 │  │   Apr 2024 – Present                 │
 │  │   — Built KYC onboarding...          │  em-dash bullets
 │  │   — LINE integrations...             │
@@ -79,6 +80,7 @@ Matches the website's Tone C aesthetic: Playfair Display serif heading, amber ac
 ```
 
 **Page 2 — Skills, Projects, Education**
+
 ```
 ┌─────────────────────────────────────────┐
 │  SKILLS                                 │
@@ -97,14 +99,14 @@ Matches the website's Tone C aesthetic: Playfair Display serif heading, amber ac
 
 ### Typography
 
-| Element | Font | Size | Color |
-|---|---|---|---|
-| Name | Playfair Display | 28px | `#1c1917` |
-| Title | monospace | 13px | `#b45309` |
-| Section titles | Inter uppercase | 9px | `#a8a29e` |
-| Body text | Inter | 10–11px | `#57534e` |
-| Timeline line | — | 1px | `#e7e5e0` |
-| Timeline dots | — | 8px circle | `#b45309` |
+| Element        | Font             | Size       | Color     |
+| -------------- | ---------------- | ---------- | --------- |
+| Name           | Playfair Display | 28px       | `#1c1917` |
+| Title          | monospace        | 13px       | `#b45309` |
+| Section titles | Inter uppercase  | 9px        | `#a8a29e` |
+| Body text      | Inter            | 10–11px    | `#57534e` |
+| Timeline line  | —                | 1px        | `#e7e5e0` |
+| Timeline dots  | —                | 8px circle | `#b45309` |
 
 ### CSS Strategy
 

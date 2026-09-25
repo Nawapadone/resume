@@ -52,25 +52,26 @@ export class AppService {
     return {
       resumeUrl: 'https://nawapadone.me',
       name: 'Nawapadone',
-      title: 'Senior Software Engineer',
+      title: 'Software Engineer',
       email: 'nawapadone.c@gmail.com',
       phone: '+66 8 4316 0055',
       location: 'Bangkok, Thailand',
       github: 'github.com/nawapadone',
       linkedin: 'linkedin.com/in/nawapadone',
       summary:
-        "Senior Software Engineer with 5+ years building full-stack products in fintech and digital assets. Specialized in SEC-compliant KYC flows, real-time financial data pipelines, and investor-facing platforms. Currently at Merkle Capital — Thailand's first SEC-licensed digital asset fund manager.",
+        "Software Engineer with 5+ years building full-stack products in fintech and digital assets. Shipped SEC-compliant KYC flows, AMLO regulatory pipelines, and investor platforms supporting ฿1B+ in assets under management and 8,000+ investors. Currently at Merkle Capital — Thailand's first SEC-licensed digital asset fund manager.",
       experience: [
         {
-          title: 'Senior Software Engineer',
+          title: 'Software Engineer',
           company: 'Merkle Capital (Cryptomind Group)',
           location: 'Bangkok, Thailand',
           period: 'April 2024 – Present',
           bullets: [
             "Owned end-to-end development across 3 products at Thailand's first SEC-licensed digital asset fund manager — merkle.capital (investor-facing platform), Elkrem (internal product), and the shared backend infrastructure including API services, deployment pipelines, and GCP cloud configuration.",
             'Built and maintained merkle.capital, integrating a CMS for investment strategy content so non-technical teams could manage fund performance pages and onboarding flows independently.',
-            'Developed investor-facing portfolio tracking, deposit/withdrawal flows, and KYC onboarding, integrating DOPA (Thai national ID verification), liveness detection, UPPass, and e-stamp for SEC-compliant identity verification.',
-            'Integrated real-time market data and portfolio valuation APIs to display NAV, asset allocation, and performance metrics across multiple investment strategies.',
+            'Developed investor-facing portfolio tracking, deposit/withdrawal flows, and KYC onboarding for 8,000+ investors, integrating DOPA (Thai national ID verification), liveness detection, UPPass, and e-stamp for SEC-compliant identity verification.',
+            'Built an AMLO regulatory compliance pipeline — automated watchlist/blacklist screening (LED alerts, HR03 classification) against sanctions lists (al-Qaida, Taliban, DPRK, Iran), PGP-encrypted file exchange with AMLO, and Cash Reporting Form (CRF) submission workflows to meet Thai SEC/AMLO reporting obligations.',
+            'Integrated real-time market data and portfolio valuation APIs to display NAV, asset allocation, and performance metrics across multiple investment strategies, supporting ฿1B+ in assets under management.',
             "Built LINE channel integrations (LINE OA, LINE LIFF, Flex Message, Rich Menu) to support investor communications and onboarding flows through Thailand's primary messaging platform.",
             'Integrated SendGrid for transactional email and OTP delivery, supporting secure authentication and investor notification workflows.',
             'Engineered a historical transaction backfill pipeline to reconcile and migrate all existing customer financial records, ensuring investment portfolio data integrity across the platform.',
@@ -168,24 +169,6 @@ export class AppService {
             'A production-ready LINE Bot webhook API with structured architecture, Firestore integration, signature validation, rate limiting, and Thai language support. Deployed on GCP via Cloud Build.',
           tech: ['Bun', 'Fastify', 'TypeScript', 'Firestore', 'GCP'],
         },
-        {
-          name: 'DIZCARD (Phase 2)',
-          description:
-            'An online card platform for small businesses (e.g. bubble tea stands) on web and mobile.',
-          tech: ['React Native', 'Vue.js', 'Parse Server'],
-        },
-        {
-          name: 'BARS (Bar And Bistro Reservation System)',
-          description:
-            'A reservation management system for small bars that allows staff to view/edit reservation info, and a chatbot that allows customers to make reservations manually.',
-          tech: ['Vue.js', 'Parse Server', 'Messenger Platform'],
-        },
-        {
-          name: 'AODAOM (A Coin Counting Smart PiggyBank)',
-          description:
-            'An IoT smart piggybank that tracks its balance using image processing and machine learning on a mobile app.',
-          tech: ['React Native', 'OpenCV', 'Express.js', 'Google Cloud Platform'],
-        },
       ],
       projectAchievements: [
         'Hatch 2019 Incubator Program',
@@ -210,15 +193,46 @@ export class AppService {
       ],
       skillGroups: [
         {
-          category: 'Languages',
-          skills: ['TypeScript', 'JavaScript', 'Go', 'Python', 'SQL', 'PHP', 'C#', 'Dart'],
+          category: 'Core Stack (Daily Use)',
+          skills: [
+            'TypeScript',
+            'NestJS',
+            'Node.js',
+            'React',
+            'Next.js',
+            'Python',
+            'PostgreSQL',
+            'GCP',
+          ],
         },
         {
-          category: 'Backend',
-          skills: ['NestJS', 'Node.js', 'Express', 'Fastify', 'Bun', 'FastAPI', 'REST'],
+          category: 'Fintech & Regulatory Experience',
+          skills: [
+            'e-KYC & Identity Verification',
+            'AML/CFT & Sanctions Screening (AMLO)',
+            'Thai SEC Regulatory Reporting',
+            'Deposit & Withdrawal Flows',
+            'NAV & Portfolio Valuation',
+            'Real-Time Market Data',
+          ],
         },
         {
-          category: 'Frontend',
+          category: 'Cloud & DevOps',
+          skills: [
+            'Google Cloud Platform (GCP)',
+            'Cloud Run',
+            'Cloud Build',
+            'Docker',
+            'CI/CD (GitHub Actions)',
+            'Monitoring & Observability',
+          ],
+        },
+        {
+          category: 'Programming Languages',
+          skills: ['TypeScript', 'JavaScript', 'Python', 'Go', 'SQL', 'Dart', 'C#'],
+        },
+        {
+          category: 'Frontend & Mobile',
           skills: [
             'React',
             'Next.js',
@@ -226,28 +240,24 @@ export class AppService {
             'Nuxt.js',
             'Angular',
             'Tailwind CSS',
-            'HTML5',
-            'CSS3',
+            'Flutter',
+            'React Native',
           ],
         },
         {
-          category: 'Mobile',
-          skills: ['Flutter', 'React Native', 'Android'],
+          category: 'Backend & APIs',
+          skills: ['NestJS', 'Node.js', 'Express', 'Fastify', 'Bun', 'FastAPI', 'REST APIs'],
         },
         {
-          category: 'Databases',
-          skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Firebase'],
+          category: 'Data & Storage',
+          skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Firebase', 'Strapi CMS'],
         },
         {
-          category: 'Cloud & DevOps',
-          skills: ['GCP', 'Docker', 'GitHub Actions'],
+          category: 'LINE Platform & Integrations',
+          skills: ['LINE Messaging API', 'LINE LIFF', 'LINE Flex Message', 'SendGrid'],
         },
         {
-          category: 'Integrations',
-          skills: ['LINE Messaging API', 'SendGrid', 'Puppeteer'],
-        },
-        {
-          category: 'Testing',
+          category: 'Automated Testing',
           skills: ['Jest', 'Vitest', 'Playwright'],
         },
       ],
