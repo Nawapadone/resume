@@ -9,21 +9,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 nvm use 22
 
 # Development (NestJS watch + Tailwind watch, concurrent)
-pnpm run dev
+bun run dev
 
 # Build
-pnpm run build           # Compile TypeScript → dist/
-pnpm run tailwind:build  # Compile Tailwind CSS → public/styles/output.css
+bun run build           # Compile TypeScript → dist/
+bun run tailwind:build  # Compile Tailwind CSS → public/styles/output.css
 
 # Production
-pnpm run prod            # node dist/src/main
+bun run prod            # node dist/src/main
 
 # Type checking
-pnpm run typecheck       # tsc --noEmit
+bun run typecheck       # tsc --noEmit
 
 # Code quality
-pnpm run lint            # ESLint with auto-fix
-pnpm run format          # Prettier
+bun run lint            # ESLint with auto-fix
+bun run format          # Prettier
 ```
 
 There is no test suite in this project.

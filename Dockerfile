@@ -10,15 +10,16 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 WORKDIR /app
 
-RUN npm install -g pnpm
+COPY --from=oven/bun:1.4 /usr/local/bin/bun /usr/local/bin/bun
 
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
 
 COPY . .
-RUN pnpm run tailwind:build
-RUN pnpm run build
-RUN pnpm prune --prod
+RUN bun run tailwind:build
+RUN bun run build
+# bun has no prune: reinstall with production deps only
+RUN rm -rf node_modules && bun install --frozen-lockfile --production
 
 # ── Stage 2: Runtime ───────────────────────────────────────────────────────────
 FROM node:20-slim AS runtime
